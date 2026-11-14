@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "surface-container-low": "#f2f4f6", "on-primary": "#ffffff", "surface-container": "#eceef0", "tertiary-container": "#6a758a", "outline": "#6d7a77", "background": "#f7f9fb", "surface-container-highest": "#e0e3e5", "tertiary": "#515c71", "on-background": "#191c1e", "surface": "#f7f9fb", "on-primary-container": "#f4fffc", "inverse-primary": "#6bd8cb", "on-surface": "#191c1e", "on-secondary-fixed": "#001d31", "secondary": "#006398", "surface-container-high": "#e6e8ea", "inverse-surface": "#2d3133", "on-tertiary-fixed-variant": "#3c475a", "surface-variant": "#e0e3e5", "primary-fixed-dim": "#6bd8cb", "surface-container-lowest": "#ffffff", "on-secondary-fixed-variant": "#004b73", "on-tertiary-container": "#fefcff", "on-tertiary-fixed": "#111c2d", "error-container": "#ffdad6", "primary-fixed": "#89f5e7", "inverse-on-surface": "#eff1f3", "outline-variant": "#bcc9c6", "tertiary-fixed": "#d8e3fb", "surface-tint": "#006a61", "tertiary-fixed-dim": "#bcc7de", "primary": "#00685f", "on-surface-variant": "#3d4947", "on-primary-fixed-variant": "#005049", "on-error": "#ffffff", "error": "#ba1a1a", "on-error-container": "#93000a", "on-secondary-container": "#00476e", "on-secondary": "#ffffff", "surface-bright": "#f7f9fb", "on-tertiary": "#ffffff", "on-primary-fixed": "#00201d", "surface-dim": "#d8dadc", "secondary-container": "#5bb8fe", "secondary-fixed-dim": "#93ccff", "secondary-fixed": "#cce5ff", "primary-container": "#008378" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: { "space-md": "1rem", "margin-tablet": "2rem", "space-xl": "2.5rem", "margin-desktop": "3rem", "space-xs": "0.25rem", "gutter-desktop": "2rem", "space-sm": "0.5rem", "gutter-tablet": "1.5rem", "margin": "1rem", "gutter": "1rem", "space-lg": "1.5rem" }, fontFamily: { "data-display": ["Plus Jakarta Sans"], "headline-lg-mobile": ["Plus Jakarta Sans"], "body-lg": ["Inter"], "body-sm": ["Inter"], "body-md": ["Inter"], "display-lg-mobile": ["Plus Jakarta Sans"], "headline-md": ["Plus Jakarta Sans"], "display-lg": ["Plus Jakarta Sans"], "label-lg": ["Inter"], "headline-sm": ["Plus Jakarta Sans"], "headline-lg": ["Plus Jakarta Sans"], "label-md": ["Inter"] }, fontSize: { "data-display": ["32px", { lineHeight: "36px", letterSpacing: "-0.02em", fontWeight: "700" }], "headline-lg-mobile": ["22px", { lineHeight: "30px", letterSpacing: "-0.01em", fontWeight: "600" }], "body-lg": ["16px", { lineHeight: "24px", fontWeight: "400" }], "body-sm": ["12px", { lineHeight: "18px", fontWeight: "400" }], "body-md": ["14px", { lineHeight: "20px", fontWeight: "400" }], "display-lg-mobile": ["30px", { lineHeight: "38px", letterSpacing: "-0.015em", fontWeight: "700" }], "headline-md": ["20px", { lineHeight: "28px", letterSpacing: "-0.005em", fontWeight: "600" }], "display-lg": ["40px", { lineHeight: "48px", letterSpacing: "-0.02em", fontWeight: "700" }], "label-lg": ["13px", { lineHeight: "18px", letterSpacing: "0.01em", fontWeight: "600" }], "headline-sm": ["17px", { lineHeight: "24px", fontWeight: "600" }], "headline-lg": ["28px", { lineHeight: "36px", letterSpacing: "-0.01em", fontWeight: "600" }], "label-md": ["11px", { lineHeight: "16px", letterSpacing: "0.03em", fontWeight: "600" }] } } } };</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased flex flex-col min-h-screen"><header class="fixed top-0 w-full z-50 bg-surface/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] pt-safe"><div class="h-20 px-space-md flex flex-col justify-center gap-space-xs"><div class="flex items-center justify-between w-full"><div class="flex items-center gap-space-sm"><div class="w-9 h-9 rounded-full bg-primary-fixed flex items-center justify-center text-primary"><span class="material-symbols-outlined text-[20px]">vital_signs</span></div><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-on-surface leading-none">SmartBra</span><span class="font-label-md text-label-md text-on-surface-variant">Research Companion</span></div></div><div class="flex items-center gap-space-sm"><div class="flex items-center gap-space-xs bg-surface-container-lowest px-2.5 py-1 rounded-full shadow-[0_2px_6px_rgba(0,0,0,0.03)]"><span class="relative flex h-2 w-2"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span></span><span class="font-label-md text-label-md text-on-surface">BLE: Connected</span></div><div class="flex items-center gap-0.5 bg-surface-container-lowest px-2 py-1 rounded-full text-on-surface-variant shadow-[0_2px_6px_rgba(0,0,0,0.03)]"><span class="material-symbols-outlined text-primary text-[14px]">bolt</span><span class="font-label-md text-label-md text-on-surface font-semibold">88%</span><span class="material-symbols-outlined text-[15px]">battery_charging_80</span></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div><div class="flex items-center justify-between pt-0.5"><h1 class="font-headline-sm text-headline-sm text-on-surface truncate">Learning Hub</h1><div class="flex items-center bg-surface-container-high rounded-full p-0.5"><a class="px-2.5 py-0.5 rounded-full font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="patient-dashboard" href="#">Patient</a><a class="px-2.5 py-0.5 rounded-full font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="clinician-analytics" href="#">Clinician</a><a class="px-2.5 py-0.5 rounded-full font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="learning-hub" href="#">Learn</a></div></div></div></header><main class="flex flex-col relative w-full pt-20 pb-20 bg-surface px-space-md min-h-screen"><div class="flex flex-col w-full pb-10 space-y-6">
+<!-- 1. HERO INTRO BANNER -->
+<div class="relative overflow-hidden rounded-xl bg-gradient-to-br from-primary-container via-primary to-secondary p-space-lg text-on-primary shadow-md">
+<div class="absolute -right-10 -bottom-10 w-44 h-44 rounded-full bg-white/10 blur-2xl pointer-events-none"></div>
+<div class="relative z-10 flex flex-col space-y-3">
+<div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/15 backdrop-blur-md self-start text-on-primary">
+<span class="material-symbols-outlined text-[16px]">school</span>
+<span class="font-label-md text-label-md tracking-wider uppercase">Clinical Knowledge Base</span>
+</div>
+<h2 class="font-display-lg-mobile text-display-lg-mobile leading-tight tracking-tight text-white">Smart Sensing &amp; Your Health</h2>
+<p class="font-body-md text-body-md text-white/90">Demystifying the multimodal sensing technology powering the SmartBra longitudinal research study with clear, accessible science.</p>
+<!-- Search Bar -->
+<div class="pt-2">
+<div class="relative flex items-center w-full">
+<span class="material-symbols-outlined absolute left-3 text-outline text-[20px] pointer-events-none">search</span>
+<input class="w-full h-11 pl-10 pr-10 rounded-full bg-surface-container-lowest text-on-surface font-body-md text-body-md shadow-sm outline-none transition-all placeholder:text-outline" id="knowledgeSearch" placeholder="Search sensors, garment care, protocols..." type="text"/>
+<button aria-label="Clear Search" class="absolute right-3 hidden text-outline hover:text-on-surface p-1" id="clearSearch" type="button">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- QUICK ACCESS CHIPS -->
+<div class="flex items-center gap-2 overflow-x-auto pb-1 no-scrollbar">
+<button class="shrink-0 px-3.5 py-1.5 rounded-full bg-surface-container-highest text-on-surface font-label-md text-label-md active:bg-primary-fixed hover:bg-surface-variant transition-colors flex items-center gap-1.5" onclick="scrollToSection('technology-triad')">
+<span class="material-symbols-outlined text-[16px] text-primary">sensors</span>
+      Sensor Triad
+    </button>
+<button class="shrink-0 px-3.5 py-1.5 rounded-full bg-surface-container-highest text-on-surface font-label-md text-label-md active:bg-primary-fixed hover:bg-surface-variant transition-colors flex items-center gap-1.5" onclick="scrollToSection('care-guide')">
+<span class="material-symbols-outlined text-[16px] text-secondary">dry_cleaning</span>
+      Care &amp; Washing
+    </button>
+<button class="shrink-0 px-3.5 py-1.5 rounded-full bg-surface-container-highest text-on-surface font-label-md text-label-md active:bg-primary-fixed hover:bg-surface-variant transition-colors flex items-center gap-1.5" onclick="scrollToSection('research-library')">
+<span class="material-symbols-outlined text-[16px] text-tertiary">article</span>
+      Clinical Papers
+    </button>
+<button class="shrink-0 px-3.5 py-1.5 rounded-full bg-surface-container-highest text-on-surface font-label-md text-label-md active:bg-primary-fixed hover:bg-surface-variant transition-colors flex items-center gap-1.5" onclick="scrollToSection('faq-section')">
+<span class="material-symbols-outlined text-[16px] text-primary">help</span>
+      Study FAQ
+    </button>
+</div>
+<!-- 2. TECHNOLOGY EXPLAINED (Interactive Visual Cards & Accordions) -->
+<div class="flex flex-col space-y-3" id="technology-triad">
+<div class="flex items-center justify-between">
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface">The Sensor Triad</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Three synchronized modalities working non-invasively</p>
+</div>
+<span class="px-2.5 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed font-label-md text-label-md">BP-03 Arch</span>
+</div>
+<!-- Modality Card 1: Optical NIRS (Violet Accent) -->
+<div class="rounded-xl bg-surface-container-lowest p-space-md shadow-sm transition-all">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-[#EDE9FE] flex items-center justify-center text-[#8B5CF6] shadow-sm">
+<span class="material-symbols-outlined text-[22px]">light_mode</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<h4 class="font-headline-sm text-headline-sm text-on-surface">Optical NIRS</h4>
+<span class="px-2 py-0.5 rounded-full bg-[#EDE9FE] text-[#8B5CF6] font-label-md text-label-md">Light-Based</span>
+</div>
+<p class="font-label-md text-label-md text-on-surface-variant">Near-Infrared Spectroscopy (760nm / 850nm)</p>
+</div>
+</div>
+<button aria-expanded="false" class="w-8 h-8 rounded-full bg-surface-container-low flex items-center justify-center text-on-surface transition-transform duration-200" onclick="toggleCard('nirs-detail', this)" type="button">
+<span class="material-symbols-outlined text-[20px]">expand_more</span>
+</button>
+</div>
+<p class="mt-3 font-body-md text-body-md text-on-surface-variant">
+        Non-invasive, ultra-low-energy near-infrared light waves safely illuminate micro-vascular capillary beds, recording continuous regional tissue oxygen saturation (<span class="font-semibold text-on-surface">HbO₂</span>) and deoxygenated hemoglobin ratios.
+      </p>
+<!-- Expandable In-Depth Section -->
+<div class="hidden mt-4 pt-3 space-y-3 bg-surface-container-low rounded-lg p-3" id="nirs-detail">
+<div class="flex items-center justify-between text-on-surface">
+<span class="font-label-md text-label-md font-semibold text-tertiary">PHYSIOLOGIC PARAMETER</span>
+<span class="font-label-md text-label-md text-[#8B5CF6]">Deep Microvascular Bed</span>
+</div>
+<!-- Lightweight Visual Telemetry Waveform -->
+<div class="rounded bg-surface-container-lowest p-2 shadow-xs">
+<div class="flex justify-between items-center mb-1">
+<span class="font-label-md text-label-md text-outline">Photoplethysmographic Hemodynamics</span>
+<span class="font-label-md text-label-md font-semibold text-[#8B5CF6]">rSO₂ 78.4%</span>
+</div>
+<svg class="w-full h-12 text-[#8B5CF6]" fill="none" preserveaspectratio="none" viewbox="0 0 320 48">
+<path d="M0,24 Q20,24 35,10 T70,24 T105,38 T140,24 T175,12 T210,24 T245,36 T280,24 T320,18" stroke="currentColor" stroke-linecap="round" stroke-width="2.5"></path>
+<path d="M0,24 Q20,24 35,10 T70,24 T105,38 T140,24 T175,12 T210,24 T245,36 T280,24 T320,18 L320,48 L0,48 Z" fill="currentColor" fill-opacity="0.08"></path>
+</svg>
+</div>
+<div class="grid grid-cols-2 gap-2 text-on-surface">
+<div class="p-2 rounded bg-surface-container-lowest">
+<span class="font-label-md text-label-md text-outline">Safety Standard</span>
+<p class="font-headline-sm text-headline-sm mt-0.5 text-on-surface">Class 1 LED</p>
+<p class="font-body-sm text-body-sm text-outline">Zero UV or ionizing risk</p>
+</div>
+<div class="p-2 rounded bg-surface-container-lowest">
+<span class="font-label-md text-label-md text-outline">Penetration Depth</span>
+<p class="font-headline-sm text-headline-sm mt-0.5 text-on-surface">12–18 mm</p>
+<p class="font-body-sm text-body-sm text-outline">Deep glandular matrix</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Modality Card 2: Bioimpedance (Amber Accent) -->
+<div class="rounded-xl bg-surface-container-lowest p-space-md shadow-sm transition-all">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-[#FEF3C7] flex items-center justify-center text-[#D97706] shadow-sm">
+<span class="material-symbols-outlined text-[22px]">ssid_chart</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<h4 class="font-headline-sm text-headline-sm text-on-surface">Bioimpedance</h4>
+<span class="px-2 py-0.5 rounded-full bg-[#FEF3C7] text-[#D97706] font-label-md text-label-md">Cellular Current</span>
+</div>
+<p class="font-label-md text-label-md text-on-surface-variant">Spectroscopy (5kHz – 200kHz Sweeps)</p>
+</div>
+</div>
+<button aria-expanded="false" class="w-8 h-8 rounded-full bg-surface-container-low flex items-center justify-center text-on-surface transition-transform duration-200" onclick="toggleCard('bio-detail', this)" type="button">
+<span class="material-symbols-outlined text-[20px]">expand_more</span>
+</button>
+</div>
+<p class="mt-3 font-body-md text-body-md text-on-surface-variant">
+        Gentle micro-currents pass through skin contact electrodes to detect cellular fluid resistance, tissue density shifts, and variations in extracellular water ratios across cycle phases.
+      </p>
+<!-- Expandable In-Depth Section -->
+<div class="hidden mt-4 pt-3 space-y-3 bg-surface-container-low rounded-lg p-3" id="bio-detail">
+<div class="flex items-center justify-between text-on-surface">
+<span class="font-label-md text-label-md font-semibold text-tertiary">PHYSIOLOGIC PARAMETER</span>
+<span class="font-label-md text-label-md text-[#D97706]">Cell Membrane Capacitance</span>
+</div>
+<!-- Lightweight Bioimpedance Arc Representation -->
+<div class="rounded bg-surface-container-lowest p-2 shadow-xs">
+<div class="flex justify-between items-center mb-1">
+<span class="font-label-md text-label-md text-outline">Cole-Cole Impedance Locus</span>
+<span class="font-label-md text-label-md font-semibold text-[#D97706]">Z = 412 Ω | Phase 7.2°</span>
+</div>
+<svg class="w-full h-12 text-[#D97706]" fill="none" viewbox="0 0 320 48">
+<path d="M10,40 C60,4 260,4 310,40" stroke="currentColor" stroke-dasharray="4 2" stroke-width="2.5"></path>
+<circle cx="160" cy="12" fill="currentColor" r="4"></circle>
+</svg>
+</div>
+<div class="grid grid-cols-2 gap-2 text-on-surface">
+<div class="p-2 rounded bg-surface-container-lowest">
+<span class="font-label-md text-label-md text-outline">Current Intensity</span>
+<p class="font-headline-sm text-headline-sm mt-0.5 text-on-surface">&lt; 50 µA</p>
+<p class="font-body-sm text-body-sm text-outline">100% imperceptible</p>
+</div>
+<div class="p-2 rounded bg-surface-container-lowest">
+<span class="font-label-md text-label-md text-outline">Biological Target</span>
+<p class="font-headline-sm text-headline-sm mt-0.5 text-on-surface">Hydration Index</p>
+<p class="font-body-sm text-body-sm text-outline">Edema &amp; density trends</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Modality Card 3: Thermal Gradient (Coral Accent) -->
+<div class="rounded-xl bg-surface-container-lowest p-space-md shadow-sm transition-all">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-[#FFE4E6] flex items-center justify-center text-[#F43F5E] shadow-sm">
+<span class="material-symbols-outlined text-[22px]">device_thermostat</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<h4 class="font-headline-sm text-headline-sm text-on-surface">Thermal Gradient</h4>
+<span class="px-2 py-0.5 rounded-full bg-[#FFE4E6] text-[#F43F5E] font-label-md text-label-md">Micro-Heat</span>
+</div>
+<p class="font-label-md text-label-md text-on-surface-variant">Calibrated Array (±0.05°C Precision)</p>
+</div>
+</div>
+<button aria-expanded="false" class="w-8 h-8 rounded-full bg-surface-container-low flex items-center justify-center text-on-surface transition-transform duration-200" onclick="toggleCard('thermal-detail', this)" type="button">
+<span class="material-symbols-outlined text-[20px]">expand_more</span>
+</button>
+</div>
+<p class="mt-3 font-body-md text-body-md text-on-surface-variant">
+        High-resolution micro-thermistor arrays assess regional surface heat dissipation, circadian metabolic cycles, and bilateral symmetric temperature distribution across both breasts.
+      </p>
+<!-- Expandable In-Depth Section -->
+<div class="hidden mt-4 pt-3 space-y-3 bg-surface-container-low rounded-lg p-3" id="thermal-detail">
+<div class="flex items-center justify-between text-on-surface">
+<span class="font-label-md text-label-md font-semibold text-tertiary">PHYSIOLOGIC PARAMETER</span>
+<span class="font-label-md text-label-md text-[#F43F5E]">Thermal Metabolic Dissipation</span>
+</div>
+<!-- Bilateral Symmetry Heat Bars -->
+<div class="rounded bg-surface-container-lowest p-3 shadow-xs space-y-2">
+<div class="flex justify-between items-center text-on-surface">
+<span class="font-label-md text-label-md text-outline">Left Quadrant Core: 36.42°C</span>
+<span class="font-label-md text-label-md font-semibold text-[#F43F5E]">Δ 0.08°C (Normal)</span>
+</div>
+<div class="w-full h-2 rounded-full bg-surface-container-highest overflow-hidden flex">
+<div class="w-1/2 bg-gradient-to-r from-primary-fixed to-[#F43F5E] h-full rounded-full"></div>
+<div class="w-1/2 bg-gradient-to-r from-[#F43F5E] to-primary-fixed h-full rounded-full opacity-80"></div>
+</div>
+<div class="flex justify-between text-[10px] text-outline font-label-md">
+<span>Left Breast</span>
+<span>Bilateral Symmetry Concordance: 98.4%</span>
+<span>Right Breast</span>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-2 text-on-surface">
+<div class="p-2 rounded bg-surface-container-lowest">
+<span class="font-label-md text-label-md text-outline">Thermal Precision</span>
+<p class="font-headline-sm text-headline-sm mt-0.5 text-on-surface">±0.02°C</p>
+<p class="font-body-sm text-body-sm text-outline">NIST traceable standard</p>
+</div>
+<div class="p-2 rounded bg-surface-container-lowest">
+<span class="font-label-md text-label-md text-outline">Sensor Nodes</span>
+<p class="font-headline-sm text-headline-sm mt-0.5 text-on-surface">16 Integrated</p>
+<p class="font-body-sm text-body-sm text-outline">Distributed quadrant map</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- 3. DEVICE CARE & MAINTENANCE (BP-03 Stack-up Guide) -->
+<div class="flex flex-col space-y-3" id="care-guide">
+<div class="flex items-center justify-between">
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Garment Care &amp; Stack-Up</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Step-by-step handling for data reliability &amp; fabric longevity</p>
+</div>
+<div class="w-8 h-8 rounded-full bg-secondary-fixed flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[18px]">wash</span>
+</div>
+</div>
+<!-- Interactive Stepper -->
+<div class="rounded-xl bg-surface-container-lowest p-space-md shadow-sm space-y-4">
+<!-- Step 1 -->
+<div class="flex items-start gap-3">
+<div class="w-7 h-7 rounded-full bg-primary flex items-center justify-center text-on-primary font-headline-sm text-headline-sm shrink-0">1</div>
+<div class="flex-1 space-y-1">
+<div class="flex items-center justify-between">
+<h4 class="font-headline-sm text-headline-sm text-on-surface">Detach Core Hub Pod</h4>
+<span class="font-label-md text-label-md px-2 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed">Required Before Wash</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+            Locate the central magnetic locking latch between the cups. Gently press the lower release latch and lift the pod up and outward. Never immerse the Core Pod in liquids.
+          </p>
+<div class="pt-1 flex items-center gap-2 text-outline font-label-md text-label-md">
+<span class="material-symbols-outlined text-[16px] text-primary">touch_app</span>
+<span>Haptic click confirms complete release</span>
+</div>
+</div>
+</div>
+<div class="w-full h-[1px] bg-surface-container"></div>
+<!-- Step 2 -->
+<div class="flex items-start gap-3">
+<div class="w-7 h-7 rounded-full bg-surface-container-highest flex items-center justify-center text-on-surface font-headline-sm text-headline-sm shrink-0">2</div>
+<div class="flex-1 space-y-1">
+<div class="flex items-center justify-between">
+<h4 class="font-headline-sm text-headline-sm text-on-surface">Textile Garment Washing</h4>
+<span class="font-label-md text-label-md px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant">Gentle / Hand</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+            Hand-wash in cool water (≤30°C) with enzyme-free mild detergent, or place inside the included protective mesh wash pouch on a gentle delicate machine cycle.
+          </p>
+<div class="p-2.5 rounded-lg bg-surface-container-low text-on-surface-variant flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-error">air</span>
+<span class="font-label-md text-label-md"><strong class="text-on-surface">Dry Flat Only:</strong> Tumble-drying or direct heat disrupts conductive silver micro-yarns.</span>
+</div>
+</div>
+</div>
+<div class="w-full h-[1px] bg-surface-container"></div>
+<!-- Step 3 -->
+<div class="flex items-start gap-3">
+<div class="w-7 h-7 rounded-full bg-surface-container-highest flex items-center justify-center text-on-surface font-headline-sm text-headline-sm shrink-0">3</div>
+<div class="flex-1 space-y-1">
+<div class="flex items-center justify-between">
+<h4 class="font-headline-sm text-headline-sm text-on-surface">Inspect Capacitive Electrodes</h4>
+<span class="font-label-md text-label-md px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant">BP-03 Inserts</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+            Check the hydro-dry contact pads inside the inner lining. If residue from body lotion or mineral deposits appears, wipe gently with an alcohol prep swab before wearing.
+          </p>
+</div>
+</div>
+<div class="w-full h-[1px] bg-surface-container"></div>
+<!-- Step 4 -->
+<div class="flex items-start gap-3">
+<div class="w-7 h-7 rounded-full bg-surface-container-highest flex items-center justify-center text-on-surface font-headline-sm text-headline-sm shrink-0">4</div>
+<div class="flex-1 space-y-1">
+<div class="flex items-center justify-between">
+<h4 class="font-headline-sm text-headline-sm text-on-surface">Recharging &amp; Dock Storage</h4>
+<span class="font-label-md text-label-md px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant">Magnetic Dock</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+            Place the Core Pod onto the cradle dock. An amber breathing LED indicates active charging; solid teal indicates full 100% capacity (good for 36 continuous wear hours).
+          </p>
+</div>
+</div>
+</div>
+</div>
+<!-- 4. BREAST HEALTH AWARENESS & EVIDENCE-BASED RESEARCH -->
+<div class="flex flex-col space-y-3" id="research-library">
+<div class="flex items-center justify-between">
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Clinical Evidence &amp; Insights</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Curated peer-reviewed science simplified for study participants</p>
+</div>
+<span class="material-symbols-outlined text-outline text-[20px]">auto_stories</span>
+</div>
+<!-- Article 1 -->
+<div class="rounded-xl bg-surface-container-lowest p-space-md shadow-sm flex flex-col space-y-2 hover:bg-surface-container-low transition-colors">
+<div class="flex items-center justify-between">
+<span class="px-2 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed font-label-md text-label-md">Physiologic Symmetry</span>
+<div class="flex items-center gap-1 text-outline font-label-md text-label-md">
+<span class="material-symbols-outlined text-[14px]">schedule</span>
+<span>4 min read</span>
+</div>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface">Understanding Bilateral Symmetry in Wearable Health Monitoring</h4>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2">
+        Healthy mammary vascularization and metabolic tissue kinetics typically demonstrate concordant bilateral balance. Learn why small variances are normal, and how long-term trend analysis uncovers actionable patterns.
+      </p>
+<div class="pt-1 flex items-center justify-between">
+<span class="font-label-md text-label-md text-tertiary">Mayo Clinic Longitudinal Study Series</span>
+<button class="font-label-lg text-label-lg text-primary font-semibold flex items-center gap-1" onclick="openArticleModal('Bilateral Symmetry', 'Full research abstract detailing continuous thermometry and optical density correlations across 1,200 cohort subjects.')" type="button">
+          Read Overview
+          <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Article 2 -->
+<div class="rounded-xl bg-surface-container-lowest p-space-md shadow-sm flex flex-col space-y-2 hover:bg-surface-container-low transition-colors">
+<div class="flex items-center justify-between">
+<span class="px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-md text-label-md">Diagnostic Complement</span>
+<div class="flex items-center gap-1 text-outline font-label-md text-label-md">
+<span class="material-symbols-outlined text-[14px]">schedule</span>
+<span>6 min read</span>
+</div>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface">Continuous Monitoring &amp; Mammography: Working Together</h4>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2">
+        The SmartBra does not replace standard-of-care annual mammograms or physician palpation. Instead, it provides dynamic functional context that traditional periodic static imaging cannot capture.
+      </p>
+<div class="pt-1 flex items-center justify-between">
+<span class="font-label-md text-label-md text-tertiary">Journal of Clinical Wearables, 2024</span>
+<button class="font-label-lg text-label-lg text-primary font-semibold flex items-center gap-1" onclick="openArticleModal('Diagnostic Complement', 'Educational overview explaining the distinct difference between anatomic imaging (mammogram/ultrasound) and metabolic functional telemetry.')" type="button">
+          Read Overview
+          <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Article 3 -->
+<div class="rounded-xl bg-surface-container-lowest p-space-md shadow-sm flex flex-col space-y-2 hover:bg-surface-container-low transition-colors">
+<div class="flex items-center justify-between">
+<span class="px-2 py-0.5 rounded-full bg-[#EDE9FE] text-[#8B5CF6] font-label-md text-label-md">Vascular Hemodynamics</span>
+<div class="flex items-center gap-1 text-outline font-label-md text-label-md">
+<span class="material-symbols-outlined text-[14px]">schedule</span>
+<span>5 min read</span>
+</div>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface">What Tissue Oxygenation (NIRS) Tells Scientists</h4>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2">
+        How continuous light absorption metrics at 760nm and 850nm illuminate hormonal changes, exercise recovery, and localized perfusion dynamics in glandular breast tissue.
+      </p>
+<div class="pt-1 flex items-center justify-between">
+<span class="font-label-md text-label-md text-tertiary">NIH Biomedical Photonics Review</span>
+<button class="font-label-lg text-label-lg text-primary font-semibold flex items-center gap-1" onclick="openArticleModal('Tissue Oxygenation &amp; NIRS', 'Detailed clinical breakdown of tissue oxygenation indexing (rSO2) and total hemoglobin concentration metrics.')" type="button">
+          Read Overview
+          <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- 5. FAQ & DIRECT STUDY SUPPORT -->
+<div class="flex flex-col space-y-3" id="faq-section">
+<div class="flex items-center justify-between">
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Frequently Asked Questions</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Instant answers to common protocol questions</p>
+</div>
+<span class="material-symbols-outlined text-outline text-[20px]">help_center</span>
+</div>
+<!-- Accordion 1 -->
+<div class="rounded-xl bg-surface-container-lowest p-space-md shadow-sm transition-all">
+<button aria-expanded="false" class="w-full flex items-center justify-between text-left gap-3" onclick="toggleFaq('faq-1', this)" type="button">
+<span class="font-headline-sm text-headline-sm text-on-surface">What if the app says "Imperfect Sensor Contact"?</span>
+<span class="material-symbols-outlined text-outline text-[20px] shrink-0 transition-transform duration-200">expand_more</span>
+</button>
+<div class="hidden mt-3 pt-3 space-y-2 text-on-surface-variant" id="faq-1">
+<p class="font-body-md text-body-md">
+          This simply indicates that one of the capacitive bioimpedance pads is not seated firmly against skin. Follow these quick steps:
+        </p>
+<ul class="list-disc pl-5 font-body-sm text-body-sm space-y-1">
+<li>Adjust the bra strap slider one notch tighter for a secure, comfortable hug.</li>
+<li>Ensure you are in a natural, upright seated posture for 20 seconds.</li>
+<li>Give cold dry skin 2–3 minutes to warm up and establish micro-humidity for optimal conductivity.</li>
+<li>Avoid applying thick mineral-oil based body balms directly over the electrode zones before wearing.</li>
+</ul>
+</div>
+</div>
+<!-- Accordion 2 -->
+<div class="rounded-xl bg-surface-container-lowest p-space-md shadow-sm transition-all">
+<button aria-expanded="false" class="w-full flex items-center justify-between text-left gap-3" onclick="toggleFaq('faq-2', this)" type="button">
+<span class="font-headline-sm text-headline-sm text-on-surface">Are the electrical micro-currents perceptible or harmful?</span>
+<span class="material-symbols-outlined text-outline text-[20px] shrink-0 transition-transform duration-200">expand_more</span>
+</button>
+<div class="hidden mt-3 pt-3 space-y-2 text-on-surface-variant" id="faq-2">
+<p class="font-body-md text-body-md">
+<strong class="text-on-surface">Completely imperceptible and safe.</strong> The bioimpedance spectroscopy currents operate below 50 micro-amperes (µA) — over 1,000 times below human neural sensory perception.
+        </p>
+<p class="font-body-sm text-body-sm">
+          The device strictly adheres to IEC 60601-1 medical electrical equipment standards and has Institutional Review Board (IRB) safety clearance for long-duration wearable research.
+        </p>
+</div>
+</div>
+<!-- Accordion 3 -->
+<div class="rounded-xl bg-surface-container-lowest p-space-md shadow-sm transition-all">
+<button aria-expanded="false" class="w-full flex items-center justify-between text-left gap-3" onclick="toggleFaq('faq-3', this)" type="button">
+<span class="font-headline-sm text-headline-sm text-on-surface">How do I pair a replacement Core Pod?</span>
+<span class="material-symbols-outlined text-outline text-[20px] shrink-0 transition-transform duration-200">expand_more</span>
+</button>
+<div class="hidden mt-3 pt-3 space-y-2 text-on-surface-variant" id="faq-3">
+<p class="font-body-md text-body-md">
+          If your study coordinator issues you a replacement pod:
+        </p>
+<ol class="list-decimal pl-5 font-body-sm text-body-sm space-y-1">
+<li>Seat the new pod onto the magnetic charging dock.</li>
+<li>Hold down the small pairing button on the dock for 4 seconds until the LED pulses blue.</li>
+<li>In the app header, tap the <strong>BLE: Connected</strong> badge to open the pairing manager and select your pod serial code.</li>
+</ol>
+</div>
+</div>
+<!-- Direct Study Coordinator Helpline Card -->
+<div class="rounded-xl bg-surface-container-high p-space-md shadow-sm space-y-3 mt-4">
+<div class="flex items-center gap-3">
+<div class="w-11 h-11 rounded-full bg-primary-fixed flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-[24px]">support_agent</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5">
+<span class="font-headline-sm text-headline-sm text-on-surface">Study Coordinator Support</span>
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+</div>
+<span class="font-label-md text-label-md text-on-surface-variant">Nurse Sarah Jenkins, RN • Mayo Clinical Unit</span>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+        Have questions regarding wearing schedules, menstrual cycle calibration logs, or unexpected readings? Your dedicated research clinical coordinator is available Mon–Fri, 8am–6pm EST.
+      </p>
+<div class="grid grid-cols-2 gap-2 pt-1">
+<a class="h-11 rounded-full bg-primary text-on-primary font-label-lg text-label-lg flex items-center justify-center gap-1.5 shadow-sm active:scale-95 transition-transform" href="tel:18005550199">
+<span class="material-symbols-outlined text-[18px]">call</span>
+          Call Coordinator
+        </a>
+<button class="h-11 rounded-full bg-surface-container-lowest text-on-surface font-label-lg text-label-lg flex items-center justify-center gap-1.5 shadow-sm active:scale-95 transition-transform" onclick="openMessageModal()" type="button">
+<span class="material-symbols-outlined text-[18px] text-primary">chat_bubble</span>
+          Message Team
+        </button>
+</div>
+</div>
+</div>
+<!-- ARTICLE DETAIL MODAL (Overlay) -->
+<div class="fixed inset-0 z-50 bg-black/40 backdrop-blur-sm hidden items-center justify-center p-space-md" id="articleModal">
+<div class="w-full max-w-sm rounded-xl bg-surface-container-lowest p-space-lg shadow-xl space-y-4 max-h-[751px] overflow-y-auto">
+<div class="flex items-start justify-between">
+<div>
+<span class="font-label-md text-label-md uppercase tracking-wider text-primary">Study Brief</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mt-1" id="modalTitle">Research Paper</h3>
+</div>
+<button class="w-8 h-8 rounded-full bg-surface-container-low flex items-center justify-center text-outline hover:text-on-surface" onclick="closeArticleModal()">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed" id="modalBody"></p>
+<div class="p-3 rounded-lg bg-surface-container-low space-y-1.5">
+<span class="font-label-md text-label-md font-semibold text-on-surface">Participant Takeaway</span>
+<p class="font-body-sm text-body-sm text-outline">Wear your garment consistently for at least 6 continuous hours per designated study day to allow neural baseline normalization.</p>
+</div>
+<button class="w-full h-11 rounded-full bg-primary text-on-primary font-label-lg text-label-lg shadow-sm" onclick="closeArticleModal()">
+        Close Brief
+      </button>
+</div>
+</div>
+<!-- MESSAGE STUDY TEAM MODAL (Overlay) -->
+<div class="fixed inset-0 z-50 bg-black/40 backdrop-blur-sm hidden items-center justify-center p-space-md" id="messageModal">
+<div class="w-full max-w-sm rounded-xl bg-surface-container-lowest p-space-lg shadow-xl space-y-4">
+<div class="flex items-start justify-between">
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Direct Coordinator Message</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Encrypted HIPAA-compliant study inbox</p>
+</div>
+<button class="w-8 h-8 rounded-full bg-surface-container-low flex items-center justify-center text-outline hover:text-on-surface" onclick="closeMessageModal()">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<div class="space-y-3">
+<div>
+<label class="font-label-md text-label-md text-on-surface-variant block mb-1">Topic Category</label>
+<select class="w-full h-10 px-3 rounded-lg bg-surface-container-low text-on-surface font-body-md text-body-md outline-none">
+<option>Electrode Skin Fit / Contact Issue</option>
+<option>Battery or Core Pod Charging</option>
+<option>Menstrual Cycle Milestone Update</option>
+<option>Protocol Scheduling Question</option>
+</select>
+</div>
+<div>
+<label class="font-label-md text-label-md text-on-surface-variant block mb-1">Your Message or Observation</label>
+<textarea class="w-full p-2.5 rounded-lg bg-surface-container-low text-on-surface font-body-md text-body-md outline-none placeholder:text-outline resize-none" placeholder="Describe what you are noticing or any questions..." rows="3"></textarea>
+</div>
+</div>
+<div class="flex items-center gap-2 pt-2">
+<button class="flex-1 h-11 rounded-full bg-surface-container-highest text-on-surface font-label-lg text-label-lg" onclick="closeMessageModal()">
+          Cancel
+        </button>
+<button class="flex-1 h-11 rounded-full bg-primary text-on-primary font-label-lg text-label-lg shadow-sm" onclick="sendMessageNotification()">
+          Send Securely
+        </button>
+</div>
+</div>
+</div>
+<!-- TOAST NOTIFICATION CONTAINER -->
+<div class="fixed bottom-24 left-1/2 -translate-x-1/2 z-50 hidden px-4 py-2 rounded-full bg-inverse-surface text-inverse-on-surface font-label-md text-label-md shadow-lg flex items-center gap-2 transition-all" id="toastNotification">
+<span class="material-symbols-outlined text-[18px] text-primary-fixed">check_circle</span>
+<span id="toastMessage">Message sent to Coordinator</span>
+</div>
+</div>
+<script>
+  // Smooth scroll helper
+  function scrollToSection(id) {
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }
+
+  // Toggle sensor triad detail cards
+  function toggleCard(id, btn) {
+    const panel = document.getElementById(id);
+    if (!panel) return;
+    const isHidden = panel.classList.contains('hidden');
+    if (isHidden) {
+      panel.classList.remove('hidden');
+      btn.style.transform = 'rotate(180deg)';
+      btn.setAttribute('aria-expanded', 'true');
+    } else {
+      panel.classList.add('hidden');
+      btn.style.transform = 'rotate(0deg)';
+      btn.setAttribute('aria-expanded', 'false');
+    }
+  }
+
+  // Toggle FAQ accordions
+  function toggleFaq(id, btn) {
+    const content = document.getElementById(id);
+    const icon = btn.querySelector('.material-symbols-outlined');
+    if (!content) return;
+    const isHidden = content.classList.contains('hidden');
+    if (isHidden) {
+      content.classList.remove('hidden');
+      if (icon) icon.style.transform = 'rotate(180deg)';
+      btn.setAttribute('aria-expanded', 'true');
+    } else {
+      content.classList.add('hidden');
+      if (icon) icon.style.transform = 'rotate(0deg)';
+      btn.setAttribute('aria-expanded', 'false');
+    }
+  }
+
+  // Article Modal Handlers
+  function openArticleModal(title, text) {
+    document.getElementById('modalTitle').textContent = title;
+    document.getElementById('modalBody').textContent = text;
+    const modal = document.getElementById('articleModal');
+    modal.classList.remove('hidden');
+    modal.classList.add('flex');
+  }
+
+  function closeArticleModal() {
+    const modal = document.getElementById('articleModal');
+    modal.classList.add('hidden');
+    modal.classList.remove('flex');
+  }
+
+  // Message Study Team Modal Handlers
+  function openMessageModal() {
+    const modal = document.getElementById('messageModal');
+    modal.classList.remove('hidden');
+    modal.classList.add('flex');
+  }
+
+  function closeMessageModal() {
+    const modal = document.getElementById('messageModal');
+    modal.classList.add('hidden');
+    modal.classList.remove('flex');
+  }
+
+  function sendMessageNotification() {
+    closeMessageModal();
+    const toast = document.getElementById('toastNotification');
+    const toastMsg = document.getElementById('toastMessage');
+    toastMsg.textContent = "Message securely sent to Nurse Sarah Jenkins.";
+    toast.classList.remove('hidden');
+    setTimeout(() => {
+      toast.classList.add('hidden');
+    }, 3500);
+  }
+
+  // Dynamic Knowledge Search Micro-Interaction
+  const searchInput = document.getElementById('knowledgeSearch');
+  const clearBtn = document.getElementById('clearSearch');
+
+  if (searchInput && clearBtn) {
+    searchInput.addEventListener('input', (e) => {
+      const val = e.target.value.toLowerCase().trim();
+      clearBtn.classList.toggle('hidden', val.length === 0);
+
+      // Simple interactive card highlighter
+      const cards = document.querySelectorAll('#technology-triad > div, #research-library > div, #faq-section > div');
+      cards.forEach(card => {
+        if (!val) {
+          card.style.opacity = '1';
+          return;
+        }
+        const text = card.textContent.toLowerCase();
+        if (text.includes(val)) {
+          card.style.opacity = '1';
+        } else {
+          card.style.opacity = '0.35';
+        }
+      });
+    });
+
+    clearBtn.addEventListener('click', () => {
+      searchInput.value = '';
+      clearBtn.classList.add('hidden');
+      const cards = document.querySelectorAll('#technology-triad > div, #research-library > div, #faq-section > div');
+      cards.forEach(card => card.style.opacity = '1');
+      searchInput.focus();
+    });
+  }
+</script></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface/85 backdrop-blur-xl shadow-[0_-2px_12px_rgba(0,0,0,0.04)]" data-active-classes="text-primary font-semibold"><div class="flex justify-around items-center h-16 px-space-sm"><a class="flex flex-col items-center justify-center gap-0.5 min-w-[64px] min-h-[44px] py-1 text-on-surface-variant hover:text-on-surface transition-all" data-path="patient-dashboard" href="#"><span class="material-symbols-outlined text-[24px]">cardiology</span><span class="font-label-md text-label-md">Patient</span></a><a class="flex flex-col items-center justify-center gap-0.5 min-w-[64px] min-h-[44px] py-1 text-on-surface-variant hover:text-on-surface transition-all" data-path="clinician-analytics" href="#"><span class="material-symbols-outlined text-[24px]">monitoring</span><span class="font-label-md text-label-md">Clinician</span></a><a aria-current="page" class="flex flex-col items-center justify-center gap-0.5 min-w-[64px] min-h-[44px] py-1 transition-all text-primary font-semibold" data-path="learning-hub" href="#"><span class="material-symbols-outlined text-[24px]">menu_book</span><span class="font-label-md text-label-md">Learn</span></a></div></nav></body></html>
