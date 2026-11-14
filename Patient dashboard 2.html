@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><title>سيمتريا | Symmetria - Patient Dashboard</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&amp;family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-error-container": "#93000a", "secondary-container": "#81f3e5", "surface-container-high": "#dee8ff", "surface-container": "#e7eeff", "secondary-fixed": "#84f5e8", "surface-bright": "#f9f9ff", "on-background": "#111c2d", "tertiary-fixed-dim": "#71d7cd", "secondary-fixed-dim": "#66d9cc", "primary-container": "#d81b60", "secondary": "#006a62", "on-primary": "#ffffff", "surface": "#f9f9ff", "surface-tint": "#bc004f", "tertiary-container": "#007e76", "tertiary-fixed": "#8ef4e9", "on-secondary": "#ffffff", "on-tertiary-container": "#cffff8", "primary-fixed-dim": "#ffb2bf", "on-primary-container": "#fff2f3", "on-error": "#ffffff", "inverse-on-surface": "#ecf1ff", "on-surface": "#111c2d", "background": "#f9f9ff", "surface-container-low": "#f0f3ff", "outline-variant": "#e3bdc3", "on-tertiary-fixed-variant": "#00504a", "primary-fixed": "#ffd9de", "surface-container-highest": "#d8e3fb", "on-tertiary": "#ffffff", "on-secondary-fixed": "#00201d", "outline": "#8e6f74", "on-primary-fixed": "#3f0016", "on-secondary-container": "#006f66", "surface-dim": "#cfdaf2", "surface-container-lowest": "#ffffff", "on-surface-variant": "#5a4044", "surface-variant": "#d8e3fb", "error-container": "#ffdad6", "on-primary-fixed-variant": "#90003b", "tertiary": "#00635c", "error": "#ba1a1a", "on-tertiary-fixed": "#00201d", "inverse-surface": "#263143", "inverse-primary": "#ffb2bf", "on-secondary-fixed-variant": "#005049", "primary": "#b0004a" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "space-md": "1rem", "gutter-md": "1.5rem", "margin": "1rem", "space-lg": "1.5rem", "space-xs": "0.25rem", "gutter": "1rem", "margin-md": "2rem", "space-xl": "2.5rem", "space-sm": "0.5rem" }, "fontFamily": { "title-md": ["Cairo", "Inter", "sans-serif"], "display-lg": ["Cairo", "Inter", "sans-serif"], "label-sm": ["IBM Plex Sans Arabic", "Inter", "sans-serif"], "label-md": ["IBM Plex Sans Arabic", "Inter", "sans-serif"], "body-lg": ["IBM Plex Sans Arabic", "Inter", "sans-serif"], "headline-md": ["Cairo", "Inter", "sans-serif"], "headline-sm": ["Cairo", "Inter", "sans-serif"], "body-sm": ["IBM Plex Sans Arabic", "Inter", "sans-serif"], "telemetry-num": ["IBM Plex Sans Arabic", "Inter", "sans-serif"], "body-md": ["IBM Plex Sans Arabic", "Inter", "sans-serif"], "label-lg": ["IBM Plex Sans Arabic", "Inter", "sans-serif"], "headline-lg-mobile": ["Cairo", "Inter", "sans-serif"], "headline-lg": ["Cairo", "Inter", "sans-serif"] }, "fontSize": { "title-md": ["1.125rem", { "lineHeight": "1.75rem", "fontWeight": "600" }], "display-lg": ["3.5rem", { "lineHeight": "4.25rem", "fontWeight": "700" }], "label-sm": ["0.6875rem", { "lineHeight": "1rem", "fontWeight": "500" }], "label-md": ["0.75rem", { "lineHeight": "1.125rem", "fontWeight": "500" }], "body-lg": ["1.125rem", { "lineHeight": "1.875rem", "fontWeight": "400" }], "headline-md": ["1.5rem", { "lineHeight": "2.25rem", "fontWeight": "600" }], "headline-sm": ["1.25rem", { "lineHeight": "1.875rem", "fontWeight": "600" }], "body-sm": ["0.875rem", { "lineHeight": "1.5rem", "fontWeight": "400" }], "telemetry-num": ["1.75rem", { "lineHeight": "2rem", "fontWeight": "600" }], "body-md": ["1rem", { "lineHeight": "1.65rem", "fontWeight": "400" }], "label-lg": ["0.875rem", { "lineHeight": "1.25rem", "fontWeight": "600" }], "headline-lg-mobile": ["1.75rem", { "lineHeight": "2.5rem", "fontWeight": "700" }], "headline-lg": ["2.25rem", { "lineHeight": "3rem", "fontWeight": "700" }] } } } }</script><style>@layer base{html,body{width:100%;margin:0;padding:0;min-height:100%;background-color:#f9f9ff;font-family:'IBM Plex Sans Arabic',sans-serif;}body{overscroll-behavior-y:none;-webkit-tap-highlight-color:transparent;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}body{min-height:max(884px,100dvh);}</style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface text-on-surface flex flex-col min-h-screen"><header class="fixed top-0 w-full z-50 bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_1px_12px_rgba(216,27,96,0.06)] pt-safe"><div class="h-20 px-3 flex flex-col justify-center gap-1.5"><div class="flex items-center justify-between w-full"><div class="flex items-center gap-2"><div class="w-9 h-9 rounded-full bg-primary-fixed flex items-center justify-center text-primary shadow-[0_2px_8px_rgba(216,27,96,0.15)]"><span class="material-symbols-outlined text-[20px]">vital_signs</span></div><div class="flex flex-col"><div class="flex items-center gap-1"><span class="font-headline-sm text-title-md text-primary font-bold tracking-tight">سيمتريا</span><span class="text-outline text-xs font-semibold">|</span><span class="font-title-md text-sm text-on-surface font-semibold tracking-wide">Symmetria</span></div></div></div><div class="flex items-center gap-2"><button aria-label="Toggle language between Arabic and English" class="flex items-center bg-surface-container-low rounded-full p-0.5 shadow-sm text-xs font-semibold transition-all" id="lang-toggle-btn" type="button"><span class="px-2 py-0.5 rounded-full bg-primary text-on-primary shadow-xs font-label-sm" id="lang-ar-label">العربية</span><span class="px-2 py-0.5 rounded-full text-on-surface-variant font-label-sm" id="lang-en-label">EN</span></button><button aria-label="ملف المستخدم / User Profile" class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-primary border border-outline-variant/40 shadow-sm min-w-[32px] min-h-[32px]" type="button"><span class="material-symbols-outlined text-[19px]">account_circle</span></button></div></div><div class="flex items-center justify-between w-full px-0.5"><div class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-secondary-container/40 border border-secondary-container text-secondary"><span class="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse"></span><span class="font-label-sm text-[11px] font-medium leading-none">متصل بالرداء الذكي • 92% بطارية</span><span class="text-[10px] text-on-surface-variant/70 leading-none hidden sm:inline">(Connected • 92%)</span></div><span class="font-label-sm text-[10px] text-on-surface-variant font-medium">Patient Dashboard</span></div></div></header><main class="flex-1 flex flex-col relative w-full pt-20 pb-24 bg-surface"><div class="flex flex-col w-full px-margin pb-space-lg space-y-space-md" id="patient-root">
+<!-- Floating Ambient Warmth & Dignity Greeting -->
+<div class="relative overflow-hidden rounded-xl bg-surface-container-lowest p-gutter shadow-sm transition-all duration-300">
+<div class="absolute -left-10 -top-10 w-36 h-36 rounded-full bg-primary-fixed/20 blur-2xl pointer-events-none"></div>
+<div class="absolute -right-8 -bottom-8 w-28 h-28 rounded-full bg-secondary-container/30 blur-xl pointer-events-none"></div>
+<div class="relative z-10 flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="relative w-12 h-12 rounded-full overflow-hidden bg-primary-fixed shadow-sm flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="Warm intimate soft-lit profile portrait of an elegant Arab woman in her thirties smiling gently with serene ambient clinical lighting in rose and soft cream tones" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZAciWdWr-abTucXS7ucqjfZtq4pJUDs5hXlacAwrqaQwfFibOZZZztuFjeX2xZHiP7cT-r5Yy20kpmCYStNwuOCkRj7m21uQo0_69MXRS6TO1HO56MvJ80mWYc8P8EGBHiULVWiIboGE67sUAr_5gxZ0cRK1Z7nrNS6WLZFOtmscrkY-DrbW5zqjWzmSVWYUsN4c_ULC-r4hc9KiGI85TYfpqEyg-iphW-FMMJXIz"/>
+<span class="absolute bottom-0 right-0 w-3.5 h-3.5 rounded-full bg-tertiary ring-2 ring-surface-container-lowest"></span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5 flex-wrap">
+<span class="font-headline-sm text-headline-sm text-on-surface tracking-tight" data-i18n="greeting">مرحباً، فاطمة</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-normal" data-i18n="greeting_sub">| Welcome Fatima</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate" data-i18n="health_summary">حالتك الفسيولوجية اليوم مستقرة ومتوازنة</p>
+</div>
+</div>
+<button class="flex items-center justify-center w-10 h-10 rounded-full bg-surface-container-low text-primary hover:bg-primary-fixed hover:text-on-primary-fixed transition-colors shadow-xs" id="calm-mode-btn" title="نمط الاسترخاء والمزامنة" type="button">
+<span class="material-symbols-outlined text-[22px]">spa</span>
+</button>
+</div>
+<!-- Smart Bra Hardware Connection Pod -->
+<div class="mt-1 flex items-center justify-between rounded-lg bg-surface-container-low/70 px-3 py-2 text-on-surface">
+<div class="flex items-center gap-2 min-w-0">
+<span class="relative flex h-2.5 w-2.5">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-secondary"></span>
+</span>
+<div class="flex flex-col min-w-0">
+<span class="font-label-lg text-label-lg text-on-surface truncate" data-i18n="bra_status">متصل بالرداء الذكي Symmetria V4</span>
+<span class="font-label-sm text-label-sm text-secondary font-medium" data-i18n="bra_mesh">مصفوفة النسيج الحسي نشطة 100% • 16 مستشعر حيوي</span>
+</div>
+</div>
+<div class="flex items-center gap-1 bg-surface-container-lowest px-2 py-1 rounded-full shadow-xs flex-shrink-0">
+<span class="material-symbols-outlined text-[16px] text-tertiary">battery_charging_90</span>
+<span class="font-label-sm text-label-sm font-semibold text-on-surface">92%</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Interactive Anatomical Garment Symmetry Visualizer (The Soul of Symmetria) -->
+<div class="flex flex-col rounded-xl bg-surface-container-lowest p-gutter shadow-sm space-y-space-md">
+<div class="flex items-center justify-between">
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5">
+<span class="font-title-md text-title-md text-primary font-bold" data-i18n="heatmap_title">خريطة التناغم النسيجي الثنائي</span>
+<span class="font-label-sm text-label-sm text-outline" data-i18n="heatmap_sub">| Bilateral Tissue Heatmap</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant" data-i18n="heatmap_desc">قراءات حية موزعة على قطاعات الصدر الأيمن والأيسر</span>
+</div>
+<div class="flex items-center gap-1 bg-surface-container-low p-1 rounded-full text-xs font-semibold">
+<button class="px-2.5 py-1 rounded-full bg-primary text-on-primary transition-all font-label-sm" data-i18n="tab_thermal" id="view-thermal">حراري</button>
+<button class="px-2.5 py-1 rounded-full text-on-surface-variant hover:text-primary transition-all font-label-sm" data-i18n="tab_lymph" id="view-impedance">لمفاوي</button>
+</div>
+</div>
+<!-- Visual Garment Dual-Hemisphere Interactive SVG -->
+<div class="relative w-full aspect-[16/10] sm:aspect-[16/9] rounded-lg bg-gradient-to-b from-surface-container-lowest via-surface-container-low/40 to-surface-container-lowest flex items-center justify-center p-2 overflow-hidden">
+<!-- Subtle Decorative Contours for Garment Soft Architecture -->
+<svg class="w-full h-full max-h-56 text-outline-variant/40" fill="none" viewbox="0 0 400 220" xmlns="http://www.w3.org/2000/svg">
+<!-- Bra Wirefree Contours -->
+<path d="M40 70 C70 40, 150 40, 185 85 C195 97, 205 97, 215 85 C250 40, 330 40, 360 70 C375 85, 370 145, 325 180 C270 220, 220 185, 200 160 C180 185, 130 220, 75 180 C30 145, 25 85, 40 70 Z" fill="rgba(240, 243, 255, 0.4)" stroke="currentColor" stroke-dasharray="4 4" stroke-width="1.5"></path>
+<!-- Left Cup Zone -->
+<circle cx="125" cy="120" fill="rgba(216, 27, 96, 0.03)" r="55" stroke="rgba(216, 27, 96, 0.15)" stroke-width="1"></circle>
+<!-- Right Cup Zone -->
+<circle cx="275" cy="120" fill="rgba(0, 126, 118, 0.03)" r="55" stroke="rgba(0, 126, 118, 0.15)" stroke-width="1"></circle>
+<!-- Sensor Nodes: Left Hemisphere (Right visually in RTL context or strictly labeled) -->
+<!-- Sensor L1 (Upper Outer) -->
+<g class="sensor-node cursor-pointer group" data-node="L1" data-organ="الربع العلوي الخارجي (يسار)" data-val="36.62°C">
+<circle class="fill-primary-fixed/60 transition-all duration-300 group-hover:scale-125" cx="100" cy="85" r="9"></circle>
+<circle class="fill-primary animate-pulse" cx="100" cy="85" r="4.5"></circle>
+</g>
+<!-- Sensor L2 (Upper Inner) -->
+<g class="sensor-node cursor-pointer group" data-node="L2" data-organ="الربع العلوي الإنسي (يسار)" data-val="36.59°C">
+<circle class="fill-primary-fixed/60 transition-all duration-300 group-hover:scale-125" cx="150" cy="88" r="9"></circle>
+<circle class="fill-primary" cx="150" cy="88" r="4.5"></circle>
+</g>
+<!-- Sensor L3 (Areolar Center) -->
+<g class="sensor-node cursor-pointer group" data-node="L3" data-organ="المنطقة المركزية (يسار)" data-val="36.65°C">
+<circle class="fill-secondary-container/50 transition-all duration-300 group-hover:scale-125" cx="125" cy="120" r="11"></circle>
+<circle class="fill-secondary" cx="125" cy="120" r="5"></circle>
+</g>
+<!-- Sensor L4 (Lower Outer) -->
+<g class="sensor-node cursor-pointer group" data-node="L4" data-organ="الربع السفلي الخارجي (يسار)" data-val="36.60°C">
+<circle class="fill-primary-fixed/60 transition-all duration-300 group-hover:scale-125" cx="95" cy="150" r="9"></circle>
+<circle class="fill-primary" cx="95" cy="150" r="4.5"></circle>
+</g>
+<!-- Sensor L5 (Lower Inner) -->
+<g class="sensor-node cursor-pointer group" data-node="L5" data-organ="الربع السفلي الإنسي (يسار)" data-val="36.58°C">
+<circle class="fill-primary-fixed/60 transition-all duration-300 group-hover:scale-125" cx="152" cy="150" r="9"></circle>
+<circle class="fill-primary" cx="152" cy="150" r="4.5"></circle>
+</g>
+<!-- Sensor L6-L8 (Auxiliary & Submammary Fold) -->
+<circle class="fill-tertiary opacity-70" cx="70" cy="115" r="4"></circle>
+<circle class="fill-secondary opacity-80" cx="125" cy="165" r="4"></circle>
+<circle class="fill-primary opacity-60" cx="170" cy="115" r="3.5"></circle>
+<!-- Center Sternum Axis Line -->
+<line stroke="rgba(142, 111, 116, 0.3)" stroke-dasharray="3 3" x1="200" x2="200" y1="70" y2="180"></line>
+<!-- Sensor Nodes: Right Hemisphere -->
+<!-- Sensor R1 (Upper Inner) -->
+<g class="sensor-node cursor-pointer group" data-node="R1" data-organ="الربع العلوي الإنسي (يمين)" data-val="36.60°C">
+<circle class="fill-primary-fixed/60 transition-all duration-300 group-hover:scale-125" cx="250" cy="88" r="9"></circle>
+<circle class="fill-primary" cx="250" cy="88" r="4.5"></circle>
+</g>
+<!-- Sensor R2 (Upper Outer) -->
+<g class="sensor-node cursor-pointer group" data-node="R2" data-organ="الربع العلوي الخارجي (يمين)" data-val="36.63°C">
+<circle class="fill-primary-fixed/60 transition-all duration-300 group-hover:scale-125" cx="300" cy="85" r="9"></circle>
+<circle class="fill-primary animate-pulse" cx="300" cy="85" r="4.5"></circle>
+</g>
+<!-- Sensor R3 (Areolar Center) -->
+<g class="sensor-node cursor-pointer group" data-node="R3" data-organ="المنطقة المركزية (يمين)" data-val="36.64°C">
+<circle class="fill-secondary-container/50 transition-all duration-300 group-hover:scale-125" cx="275" cy="120" r="11"></circle>
+<circle class="fill-secondary" cx="275" cy="120" r="5"></circle>
+</g>
+<!-- Sensor R4 (Lower Inner) -->
+<g class="sensor-node cursor-pointer group" data-node="R4" data-organ="الربع السفلي الإنسي (يمين)" data-val="36.59°C">
+<circle class="fill-primary-fixed/60 transition-all duration-300 group-hover:scale-125" cx="248" cy="150" r="9"></circle>
+<circle class="fill-primary" cx="248" cy="150" r="4.5"></circle>
+</g>
+<!-- Sensor R5 (Lower Outer) -->
+<g class="sensor-node cursor-pointer group" data-node="R5" data-organ="الربع السفلي الخارجي (يمين)" data-val="36.61°C">
+<circle class="fill-primary-fixed/60 transition-all duration-300 group-hover:scale-125" cx="305" cy="150" r="9"></circle>
+<circle class="fill-primary" cx="305" cy="150" r="4.5"></circle>
+</g>
+<!-- Sensor R6-R8 -->
+<circle class="fill-tertiary opacity-70" cx="330" cy="115" r="4"></circle>
+<circle class="fill-secondary opacity-80" cx="275" cy="165" r="4"></circle>
+<circle class="fill-primary opacity-60" cx="230" cy="115" r="3.5"></circle>
+<!-- Hemisphere Labels -->
+<text fill="#5a4044" font-family="IBM Plex Sans Arabic" font-size="12" font-weight="600" text-anchor="middle" x="125" y="45">الجانب الأيسر (L)</text>
+<text fill="#5a4044" font-family="IBM Plex Sans Arabic" font-size="12" font-weight="600" text-anchor="middle" x="275" y="45">الجانب الأيمن (R)</text>
+</svg>
+<!-- Floating Live Micro-Readout Tooltip -->
+<div class="absolute bottom-2 inset-x-3 bg-surface-container-lowest/95 backdrop-blur-md rounded-lg p-2.5 shadow-md flex items-center justify-between border-none transition-all" id="sensor-inspect-box">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary"></span>
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg text-on-surface" id="inspect-label">العقدة المركزية (الأيسر L3)</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">حالة الأنسجة متطابقة طبيعياً</span>
+</div>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="font-telemetry-num text-title-md text-primary font-bold" id="inspect-value">36.65°C</span>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-secondary-container/50 text-secondary font-medium">Δ 0.01°C</span>
+</div>
+</div>
+</div>
+<!-- Bilateral Balance Metric Bar -->
+<div class="flex items-center justify-between bg-surface-container-low/60 rounded-lg p-3">
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg text-on-surface" data-i18n="balance_metric_name">مؤشر التماثل الثنائي الفسيولوجي</span>
+<span class="font-label-sm text-label-sm text-secondary font-semibold" data-i18n="balance_status">توازن مثالي 99.8% (ضمن الحدود الطبيعية)</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-secondary text-[24px]">verified</span>
+</div>
+</div>
+</div>
+<!-- Core Biometric Readings (4 Clinical Cards) -->
+<div class="grid grid-cols-2 gap-space-sm">
+<!-- Card 1: Tissue Temperature -->
+<div class="flex flex-col justify-between rounded-xl bg-surface-container-lowest p-3.5 shadow-sm hover:shadow-md transition-shadow relative overflow-hidden">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg text-on-surface font-semibold" data-i18n="temp_title">حرارة الأنسجة</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant" data-i18n="temp_sub">Tissue Temp</span>
+</div>
+<div class="w-8 h-8 rounded-full bg-primary-fixed/40 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[18px]">device_thermostat</span>
+</div>
+</div>
+<div class="mt-2 flex items-baseline gap-1">
+<span class="font-telemetry-num text-telemetry-num text-primary font-bold">36.6</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">°C</span>
+</div>
+<div class="mt-2 flex items-center justify-between pt-2">
+<span class="font-label-sm text-[11px] text-secondary font-medium" data-i18n="temp_delta">فارق التماثل: 0.02°C</span>
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+</div>
+</div>
+<!-- Card 2: Bioimpedance & Fluid Balance -->
+<div class="flex flex-col justify-between rounded-xl bg-surface-container-lowest p-3.5 shadow-sm hover:shadow-md transition-shadow relative overflow-hidden">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg text-on-surface font-semibold" data-i18n="bio_title">المقاومة الحيوية</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant" data-i18n="bio_sub">Bioimpedance</span>
+</div>
+<div class="w-8 h-8 rounded-full bg-secondary-container/50 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[18px]">water_drop</span>
+</div>
+</div>
+<div class="mt-2 flex items-baseline gap-1">
+<span class="font-telemetry-num text-telemetry-num text-on-surface font-bold">482</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Ω</span>
+</div>
+<div class="mt-2 flex items-center justify-between pt-2">
+<span class="font-label-sm text-[11px] text-on-surface-variant font-medium" data-i18n="bio_status">تصريف لمفاوي معتدل</span>
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+</div>
+</div>
+<!-- Card 3: Garment Fit & Therapeutic Pressure -->
+<div class="flex flex-col justify-between rounded-xl bg-surface-container-lowest p-3.5 shadow-sm hover:shadow-md transition-shadow relative overflow-hidden">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg text-on-surface font-semibold" data-i18n="fit_title">ضغط الدعم والارتداء</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant" data-i18n="fit_sub">Fit Compression</span>
+</div>
+<div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-on-surface">
+<span class="material-symbols-outlined text-[18px]">compress</span>
+</div>
+</div>
+<div class="mt-2 flex items-baseline gap-1">
+<span class="font-telemetry-num text-telemetry-num text-on-surface font-bold">12.4</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">mmHg</span>
+</div>
+<div class="mt-2 flex items-center justify-between pt-2">
+<span class="font-label-sm text-[11px] text-secondary font-medium" data-i18n="fit_quality">ملاءمة مريحة 98%</span>
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+</div>
+</div>
+<!-- Card 4: Localized Tissue SpO2 -->
+<div class="flex flex-col justify-between rounded-xl bg-surface-container-lowest p-3.5 shadow-sm hover:shadow-md transition-shadow relative overflow-hidden">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg text-on-surface font-semibold" data-i18n="spo2_title">أكسجة الأنسجة</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant" data-i18n="spo2_sub">Tissue SpO₂</span>
+</div>
+<div class="w-8 h-8 rounded-full bg-primary-fixed/40 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[18px]">air</span>
+</div>
+</div>
+<div class="mt-2 flex items-baseline gap-1">
+<span class="font-telemetry-num text-telemetry-num text-primary font-bold">99%</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">SpO₂</span>
+</div>
+<div class="mt-2 flex items-center justify-between pt-2">
+<span class="font-label-sm text-[11px] text-secondary font-medium" data-i18n="spo2_status">تروية دموية ممتازة</span>
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+</div>
+</div>
+</div>
+<!-- Historical 7-Day Symmetry Stability Trend -->
+<div class="flex flex-col rounded-xl bg-surface-container-lowest p-gutter shadow-sm space-y-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5">
+<span class="font-title-md text-title-md text-on-surface font-bold" data-i18n="trend_title">استقرار التماثل عبر 7 أيام</span>
+<span class="font-label-sm text-label-sm text-outline">| 7-Day Stability</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant" data-i18n="trend_sub">تطابق منحنى الحرارة النسيجية بين الجانبين</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="inline-flex items-center gap-1 text-[11px] font-medium text-primary">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<span data-i18n="cup_l">أيسر</span>
+</span>
+<span class="inline-flex items-center gap-1 text-[11px] font-medium text-secondary">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span data-i18n="cup_r">أيمن</span>
+</span>
+</div>
+</div>
+<!-- Inline Trend Wave Chart SVG -->
+<div class="w-full h-32 pt-2">
+<svg class="w-full h-full overflow-visible" fill="none" viewbox="0 0 340 100">
+<!-- Horizontal Reference Guides -->
+<line stroke="rgba(216, 227, 251, 0.6)" stroke-dasharray="2 2" x1="0" x2="340" y1="20" y2="20"></line>
+<line stroke="rgba(216, 227, 251, 0.6)" stroke-dasharray="2 2" x1="0" x2="340" y1="55" y2="55"></line>
+<line stroke="rgba(216, 227, 251, 0.6)" stroke-dasharray="2 2" x1="0" x2="340" y1="85" y2="85"></line>
+<!-- Left Breast Smooth Temperature Trace -->
+<path d="M 0 52 C 45 48, 70 56, 110 50 C 150 44, 185 54, 230 49 C 275 46, 305 52, 340 48" fill="none" stroke="#b0004a" stroke-linecap="round" stroke-width="2.5"></path>
+<!-- Right Breast Smooth Temperature Trace (Closely parallel for reassuring symmetry) -->
+<path d="M 0 55 C 45 50, 70 58, 110 52 C 150 46, 185 55, 230 51 C 275 47, 305 54, 340 50" fill="none" stroke="#006a62" stroke-dasharray="4 2" stroke-linecap="round" stroke-width="2.5"></path>
+<!-- Interactive Day Data Point Nodes -->
+<circle class="animate-pulse" cx="230" cy="49" fill="#b0004a" r="4"></circle>
+<circle cx="230" cy="51" fill="#006a62" r="3.5"></circle>
+<circle cx="340" cy="48" fill="#b0004a" r="4.5"></circle>
+<circle cx="340" cy="50" fill="#006a62" r="4.5"></circle>
+</svg>
+</div>
+<!-- Day Scale Track -->
+<div class="flex items-center justify-between text-on-surface-variant font-label-sm text-[11px] px-1 pt-1">
+<span data-i18n="day_sat">السبت</span>
+<span data-i18n="day_sun">الأحد</span>
+<span data-i18n="day_mon">الإثنين</span>
+<span data-i18n="day_tue">الثلاثاء</span>
+<span data-i18n="day_wed">الأربعاء</span>
+<span data-i18n="day_thu">الخميس</span>
+<span class="text-primary font-bold" data-i18n="day_today">اليوم</span>
+</div>
+</div>
+<!-- Smart Notifications & Medical Team Sync -->
+<div class="flex flex-col space-y-space-sm">
+<div class="flex items-center justify-between px-1">
+<span class="font-headline-sm text-title-md text-on-surface font-bold" data-i18n="notif_section_title">التنبيهات والمزامنة السريرية</span>
+<span class="font-label-sm text-label-sm text-secondary font-medium" data-i18n="sync_live">تحديث فوري</span>
+</div>
+<!-- Notification 1: Scheduled Self-Exam Companion -->
+<div class="flex items-start gap-3 rounded-xl bg-surface-container-lowest p-3.5 shadow-sm">
+<div class="w-10 h-10 rounded-full bg-primary-fixed/40 text-primary flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-[22px]">calendar_month</span>
+</div>
+<div class="flex flex-col flex-1 min-w-0">
+<div class="flex items-center justify-between">
+<span class="font-label-lg text-label-lg text-on-surface font-bold" data-i18n="self_exam_title">الفحص الذاتي الشهري المجدول</span>
+<span class="font-label-sm text-[10px] px-2 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed font-semibold" data-i18n="exam_countdown">بعد 4 أيام</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5" data-i18n="self_exam_desc">حسب الدورة الفسيولوجية، أفضل وقت لفحص الأنسجة باليد هو صباح الأحد القادم.</p>
+<div class="mt-2 flex items-center gap-2">
+<button class="inline-flex items-center gap-1 font-label-sm text-xs font-semibold text-primary hover:underline" type="button">
+<span data-i18n="start_guide">دليل الفحص التفاعلي</span>
+<span class="material-symbols-outlined text-[14px]">arrow_back</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Notification 2: Doctor Sync Card -->
+<div class="flex items-center justify-between rounded-xl bg-surface-container-lowest p-3.5 shadow-sm">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-10 h-10 rounded-full overflow-hidden bg-surface-container flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="A dignified female oncologist doctor wearing clinical coat with warm friendly eyes in a calm medical office" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCk-6aqADNyFj2AKRYmB2qc3YP-7JRfgmqk-S5nCr9Z9YBfZ58YH_QWc7ngpBs022xgZHjfWNORH0iB_jmlgrnLUzDjD2cUMthI5At9J4fdysqxyujjrwS10LtFzAxNy14dkWiN6tn3pKk9MFWIM8XGU9M47wuyzzuoLcyIsjLM5t40rGjfyhpi5R2EM126dJTQ9bUFQkzD1tE-rQtgjMor7vGEPYz9Mdb5oJy8n1Mx"/>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-lg text-label-lg text-on-surface font-bold truncate" data-i18n="doctor_name">د. ليلى الشريف (استشارية أورام الثدي)</span>
+<div class="flex items-center gap-1 text-on-surface-variant font-label-sm text-[11px]">
+<span class="material-symbols-outlined text-[14px] text-tertiary">cloud_done</span>
+<span data-i18n="doctor_sync_time">تمت مزامنة قراءات الـ 48 ساعة الماضية بنجاح</span>
+</div>
+</div>
+</div>
+<button class="flex-shrink-0 w-8 h-8 rounded-full bg-surface-container-low text-primary flex items-center justify-center hover:bg-primary hover:text-on-primary transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">chat</span>
+</button>
+</div>
+</div>
+<!-- Empathetic Care Companion Tip (Delight & Reassurance) -->
+<div class="relative overflow-hidden rounded-xl bg-gradient-to-r from-secondary-container/30 to-primary-fixed/20 p-gutter shadow-sm">
+<div class="flex items-start gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-container-lowest flex items-center justify-center text-secondary shadow-xs flex-shrink-0">
+<span class="material-symbols-outlined text-[20px]">favorite</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg text-on-surface font-bold" data-i18n="care_tip_title">همسة العناية اليومية</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5 leading-relaxed" data-i18n="care_tip_body">
+          شرب كوب من الماء الفاتر مع تمارين التنفس الصدري العميق يساعد في مرونة التصريف اللمفاوي للأنسجة الصدرية ويزيد من دقة توازن القراءات.
+        </p>
+</div>
+</div>
+</div>
+<!-- Non-Diagnostic Clinical Disclaimer Card (Mandatory Respect & Ethics) -->
+<div class="rounded-lg bg-surface-container-low/60 p-3 flex items-start gap-2.5">
+<span class="material-symbols-outlined text-outline text-[18px] flex-shrink-0 mt-0.5">info</span>
+<p class="font-label-sm text-label-sm text-on-surface-variant/90 leading-relaxed" data-i18n="disclaimer_text">
+<strong>تنويه سريري:</strong> سيمتريا أداة رصد بيومتري مساندة لمتابعة الأنماط الحيوية وتناغم الأنسجة، ولا تقدم تشخيصاً طبياً مباشراً. استشيري طبيبكِ دائماً عند ملاحظة أي تغير ملموس.
+    </p>
+</div>
+</div>
+<!-- Interactive Bilingual Logic & Micro-interaction Script -->
+<script>
+  (function initSymmetriaPatient() {
+    const translations = {
+      ar: {
+        greeting: "مرحباً، فاطمة",
+        greeting_sub: "| Welcome Fatima",
+        health_summary: "حالتك الفسيولوجية اليوم مستقرة ومتوازنة",
+        bra_status: "متصل بالرداء الذكي Symmetria V4",
+        bra_mesh: "مصفوفة النسيج الحسي نشطة 100% • 16 مستشعر حيوي",
+        heatmap_title: "خريطة التناغم النسيجي الثنائي",
+        heatmap_sub: "| Bilateral Tissue Heatmap",
+        heatmap_desc: "قراءات حية موزعة على قطاعات الصدر الأيمن والأيسر",
+        tab_thermal: "حراري",
+        tab_lymph: "لمفاوي",
+        balance_metric_name: "مؤشر التماثل الثنائي الفسيولوجي",
+        balance_status: "توازن مثالي 99.8% (ضمن الحدود الطبيعية)",
+        temp_title: "حرارة الأنسجة",
+        temp_sub: "Tissue Temp",
+        temp_delta: "فارق التماثل: 0.02°C",
+        bio_title: "المقاومة الحيوية",
+        bio_sub: "Bioimpedance",
+        bio_status: "تصريف لمفاوي معتدل",
+        fit_title: "ضغط الدعم والارتداء",
+        fit_sub: "Fit Compression",
+        fit_quality: "ملاءمة مريحة 98%",
+        spo2_title: "أكسجة الأنسجة",
+        spo2_sub: "Tissue SpO₂",
+        spo2_status: "تروية دموية ممتازة",
+        trend_title: "استقرار التماثل عبر 7 أيام",
+        trend_sub: "تطابق منحنى الحرارة النسيجية بين الجانبين",
+        cup_l: "أيسر",
+        cup_r: "أيمن",
+        day_sat: "السبت",
+        day_sun: "الأحد",
+        day_mon: "الإثنين",
+        day_tue: "الثلاثاء",
+        day_wed: "الأربعاء",
+        day_thu: "الخميس",
+        day_today: "اليوم",
+        notif_section_title: "التنبيهات والمزامنة السريرية",
+        sync_live: "تحديث فوري",
+        self_exam_title: "الفحص الذاتي الشهري المجدول",
+        exam_countdown: "بعد 4 أيام",
+        self_exam_desc: "حسب الدورة الفسيولوجية، أفضل وقت لفحص الأنسجة باليد هو صباح الأحد القادم.",
+        start_guide: "دليل الفحص التفاعلي",
+        doctor_name: "د. ليلى الشريف (استشارية أورام الثدي)",
+        doctor_sync_time: "تمت مزامنة قراءات الـ 48 ساعة الماضية بنجاح",
+        care_tip_title: "همسة العناية اليومية",
+        care_tip_body: "شرب كوب من الماء الفاتر مع تمارين التنفس الصدري العميق يساعد في مرونة التصريف اللمفاوي للأنسجة الصدرية ويزيد من دقة توازن القراءات.",
+        disclaimer_text: "<strong>تنويه سريري:</strong> سيمتريا أداة رصد بيومتري مساندة لمتابعة الأنماط الحيوية وتناغم الأنسجة، ولا تقدم تشخيصاً طبياً مباشراً. استشيري طبيبكِ دائماً عند ملاحظة أي تغير ملموس."
+      },
+      en: {
+        greeting: "Welcome, Fatima",
+        greeting_sub: "| مرحباً فاطمة",
+        health_summary: "Your physiological baseline today is balanced and calm",
+        bra_status: "Connected to Smart Garment Symmetria V4",
+        bra_mesh: "Sensory textile array 100% active • 16 biometric nodes",
+        heatmap_title: "Bilateral Tissue Symmetry Map",
+        heatmap_sub: "| خريطة التناغم النسيجي",
+        heatmap_desc: "Real-time readings mapped across left & right tissue sectors",
+        tab_thermal: "Thermal",
+        tab_lymph: "Lymphatic",
+        balance_metric_name: "Physiological Bilateral Symmetry Index",
+        balance_status: "Optimal Balance 99.8% (Within reference bounds)",
+        temp_title: "Tissue Temperature",
+        temp_sub: "حرارة الأنسجة",
+        temp_delta: "Symmetry Delta: 0.02°C",
+        bio_title: "Bioimpedance",
+        bio_sub: "المقاومة الحيوية",
+        bio_status: "Balanced Lymphatic Dynamics",
+        fit_title: "Contact Pressure",
+        fit_sub: "ضغط الارتداء",
+        fit_quality: "Comfort Fit 98%",
+        spo2_title: "Tissue Oxygenation",
+        spo2_sub: "أكسجة الأنسجة",
+        spo2_status: "Optimal Microcirculation",
+        trend_title: "7-Day Symmetry Stability",
+        trend_sub: "Consistent bilateral thermal traces over time",
+        cup_l: "Left",
+        cup_r: "Right",
+        day_sat: "Sat",
+        day_sun: "Sun",
+        day_mon: "Mon",
+        day_tue: "Tue",
+        day_wed: "Wed",
+        day_thu: "Thu",
+        day_today: "Today",
+        notif_section_title: "Smart Alerts & Clinical Sync",
+        sync_live: "Live Sync",
+        self_exam_title: "Monthly Self-Exam Reminder",
+        exam_countdown: "In 4 Days",
+        self_exam_desc: "Based on cycle telemetry, optimal self-palpation window begins this Sunday.",
+        start_guide: "Open Guided Tutorial",
+        doctor_name: "Dr. Laila Al-Sharif (Breast Oncologist)",
+        doctor_sync_time: "Past 48-hour telemetry synced seamlessly",
+        care_tip_title: "Daily Wellness Note",
+        care_tip_body: "Hydration paired with gentle diaphragmatic breathing fosters optimal lymphatic drainage and telemetry accuracy.",
+        disclaimer_text: "<strong>Clinical Disclaimer:</strong> Symmetria is an adjunct biometric monitoring system and does not deliver diagnostic determinations. Consult your physician regarding any physical symptoms."
+      }
+    };
+
+    let currentLang = 'ar';
+
+    function setLanguage(lang) {
+      currentLang = lang;
+      const dict = translations[lang];
+      if (!dict) return;
+
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (dict[key]) {
+          if (dict[key].includes('<')) {
+            el.innerHTML = dict[key];
+          } else {
+            el.textContent = dict[key];
+          }
+        }
+      });
+
+      // Synchronize Shell button if present
+      const arLabel = document.getElementById('lang-ar-label');
+      const enLabel = document.getElementById('lang-en-label');
+      if (arLabel && enLabel) {
+        if (lang === 'ar') {
+          arLabel.className = 'px-2 py-0.5 rounded-full bg-primary text-on-primary shadow-xs font-label-sm';
+          enLabel.className = 'px-2 py-0.5 rounded-full text-on-surface-variant font-label-sm';
+        } else {
+          enLabel.className = 'px-2 py-0.5 rounded-full bg-primary text-on-primary shadow-xs font-label-sm';
+          arLabel.className = 'px-2 py-0.5 rounded-full text-on-surface-variant font-label-sm';
+        }
+      }
+    }
+
+    // Bind shell language toggle if present
+    const langBtn = document.getElementById('lang-toggle-btn');
+    if (langBtn) {
+      langBtn.addEventListener('click', () => {
+        setLanguage(currentLang === 'ar' ? 'en' : 'ar');
+      });
+    }
+
+    // Heatmap Sensor Node Interactive Inspector
+    const inspectLabel = document.getElementById('inspect-label');
+    const inspectVal = document.getElementById('inspect-value');
+    const inspectBox = document.getElementById('sensor-inspect-box');
+    const nodes = document.querySelectorAll('.sensor-node');
+
+    nodes.forEach(node => {
+      node.addEventListener('click', () => {
+        const name = node.getAttribute('data-organ');
+        const val = node.getAttribute('data-val');
+        if (inspectLabel && inspectVal && inspectBox) {
+          inspectLabel.textContent = name;
+          inspectVal.textContent = val;
+          inspectBox.classList.add('bg-primary-fixed/30');
+          setTimeout(() => {
+            inspectBox.classList.remove('bg-primary-fixed/30');
+          }, 350);
+        }
+      });
+    });
+
+    // Thermal vs Lymphatic Toggle Simulation
+    const btnThermal = document.getElementById('view-thermal');
+    const btnLymph = document.getElementById('view-impedance');
+    if (btnThermal && btnLymph) {
+      btnThermal.addEventListener('click', () => {
+        btnThermal.className = "px-2.5 py-1 rounded-full bg-primary text-on-primary transition-all font-label-sm";
+        btnLymph.className = "px-2.5 py-1 rounded-full text-on-surface-variant hover:text-primary transition-all font-label-sm";
+        if (inspectVal) inspectVal.textContent = "36.65°C";
+      });
+      btnLymph.addEventListener('click', () => {
+        btnLymph.className = "px-2.5 py-1 rounded-full bg-secondary text-on-secondary transition-all font-label-sm";
+        btnThermal.className = "px-2.5 py-1 rounded-full text-on-surface-variant hover:text-secondary transition-all font-label-sm";
+        if (inspectVal) inspectVal.textContent = "484 Ω";
+      });
+    }
+
+    // Calm Mode button haptic delight
+    const calmBtn = document.getElementById('calm-mode-btn');
+    if (calmBtn) {
+      calmBtn.addEventListener('click', () => {
+        calmBtn.classList.toggle('text-secondary');
+        calmBtn.classList.toggle('scale-110');
+        setTimeout(() => calmBtn.classList.remove('scale-110'), 200);
+      });
+    }
+  })();
+</script></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface-container-lowest/95 backdrop-blur-xl shadow-[0_-4px_24px_-2px_rgba(216,27,96,0.07)]" data-active-classes="text-primary font-bold"><div class="flex items-center justify-around h-16 px-gutter"><a aria-current="page" class="flex flex-col items-center justify-center flex-1 h-full min-w-[44px] min-h-[44px] gap-0.5 transition-colors group text-primary font-bold" data-path="patient-dashboard" href="#"><span class="material-symbols-outlined text-[24px] group-hover:scale-105 transition-transform">health_and_safety</span><div class="flex items-center gap-0.5 leading-none"><span class="font-label-sm text-label-sm">المريضة</span><span class="text-[10px] text-outline opacity-80">|</span><span class="font-label-sm text-[10px] opacity-90">Patient</span></div></a><a class="flex flex-col items-center justify-center flex-1 h-full min-w-[44px] min-h-[44px] gap-0.5 text-on-surface-variant transition-colors hover:text-primary group" data-path="clinician-telemetry" href="#"><span class="material-symbols-outlined text-[24px] group-hover:scale-105 transition-transform">stethoscope</span><div class="flex items-center gap-0.5 leading-none"><span class="font-label-sm text-label-sm">الطبيب</span><span class="text-[10px] text-outline opacity-80">|</span><span class="font-label-sm text-[10px] opacity-90">Clinician</span></div></a><a class="flex flex-col items-center justify-center flex-1 h-full min-w-[44px] min-h-[44px] gap-0.5 text-on-surface-variant transition-colors hover:text-primary group" data-path="education-portal" href="#"><span class="material-symbols-outlined text-[24px] group-hover:scale-105 transition-transform">menu_book</span><div class="flex items-center gap-0.5 leading-none"><span class="font-label-sm text-label-sm">التثقيف</span><span class="text-[10px] text-outline opacity-80">|</span><span class="font-label-sm text-[10px] opacity-90">Education</span></div></a></div></nav></body></html>
